@@ -1,0 +1,251 @@
+commit f0d7217508131a006d19128c2988a43e44107418
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Mon Jul 13 12:02:12 2015 +0100
+
+    Support enrollment engines such as subscription-manager
+    
+    This is perhaps non-optimal as we have to parse the list of repos twice, but
+    does allow the enrollment engine to add and remove sources as required.
+    
+    Resolves: https://bugzilla.redhat.com/show_bug.cgi?id=1223417
+
+diff --git a/libhif/hif-context.c b/libhif/hif-context.c
+index 57bda46..454af8a 100644
+--- a/libhif/hif-context.c
++++ b/libhif/hif-context.c
+@@ -66,6 +66,7 @@ struct _HifContextPrivate
+ 	gboolean		 only_trusted;
+ 	gboolean		 enable_yumdb;
+ 	gboolean		 keep_cache;
++	gboolean		 enrollment_valid;
+ 	HifLock			*lock;
+ 	HifTransaction		*transaction;
+ 	GThread			*transaction_thread;
+@@ -1199,6 +1200,43 @@ hif_context_set_http_proxy (HifContext	*context,
+ #define MAX_NATIVE_ARCHES	12
+ 
+ /**
++ * hif_context_setup_enrollments:
++ * @context: a #HifContext instance.
++ * @error: A #GError or %NULL
++ *
++ * Resyncs the enrollment with the vendor system. This may change the contents
++ * of files in repos.d according to subscription levels.
++ *
++ * Returns: %TRUE for success, %FALSE otherwise
++ *
++ * Since: 0.2.1
++ **/
++gboolean
++hif_context_setup_enrollments (HifContext *context, GError **error)
++{
++	HifContextPrivate *priv = GET_PRIVATE (context);
++	guint i;
++	const gchar *cmds[] = { "/usr/sbin/rhn-profile-sync",
++				"/usr/bin/subscription-manager refresh",
++				NULL };
++
++	/* no need to refresh */
++	if (priv->enrollment_valid)
++		return TRUE;
++
++	for (i = 0; cmds[i] != NULL; i++) {
++		_cleanup_strv_free_ gchar **argv = g_strsplit (cmds[i], " ", -1);
++		if (!g_file_test (argv[0], G_FILE_TEST_EXISTS))
++			continue;
++		g_debug ("Running: %s", cmds[i]);
++		if (!g_spawn_command_line_sync (cmds[i], NULL, NULL, NULL, error))
++			return FALSE;
++	}
++	priv->enrollment_valid = TRUE;
++	return TRUE;
++}
++
++/**
+  * hif_context_setup:
+  * @context: a #HifContext instance.
+  * @cancellable: A #GCancellable or %NULL
+@@ -1373,6 +1411,10 @@ hif_context_setup (HifContext *context,
+ 	if (!hif_context_copy_vendor_solv (context, error))
+ 		return FALSE;
+ 
++	/* initialize external frameworks where installed */
++	if (!hif_context_setup_enrollments (context, error))
++		return FALSE;
++
+ 	return TRUE;
+ }
+ 
+@@ -1730,6 +1772,30 @@ hif_context_commit (HifContext *context, HifState *state, GError **error)
+ }
+ 
+ /**
++ * hif_context_invalidate_full:
++ * @context: a #HifContext instance.
++ * @message: the reason for invalidating
++ * @flags: a #HifContextInvalidateFlags, e.g. %HIF_CONTEXT_INVALIDATE_FLAG_ENROLLMENT
++ *
++ * Informs the context that the certain parts of the context may no longer be
++ * in sync or valid.
++ *
++ * Since: 0.2.1
++ **/
++void
++hif_context_invalidate_full (HifContext *context,
++			     const gchar *message,
++			     HifContextInvalidateFlags flags)
++{
++	HifContextPrivate *priv = GET_PRIVATE (context);
++	g_debug ("Msg: %s", message);
++	if (flags & HIF_CONTEXT_INVALIDATE_FLAG_RPMDB)
++		g_signal_emit (context, signals [SIGNAL_INVALIDATE], 0, message);
++	if (flags & HIF_CONTEXT_INVALIDATE_FLAG_ENROLLMENT)
++		priv->enrollment_valid = FALSE;
++}
++
++/**
+  * hif_context_invalidate:
+  * @context: a #HifContext instance.
+  * @message: the reason for invalidating
+@@ -1741,7 +1807,8 @@ hif_context_commit (HifContext *context, HifState *state, GError **error)
+ void
+ hif_context_invalidate (HifContext *context, const gchar *message)
+ {
+-	g_signal_emit (context, signals [SIGNAL_INVALIDATE], 0, message);
++	hif_context_invalidate_full (context, message,
++				     HIF_CONTEXT_INVALIDATE_FLAG_RPMDB);
+ }
+ 
+ /**
+diff --git a/libhif/hif-context.h b/libhif/hif-context.h
+index ee7a7eb..7aaa8cc 100644
+--- a/libhif/hif-context.h
++++ b/libhif/hif-context.h
+@@ -65,6 +65,22 @@ struct _HifContextClass
+ 	void (*_hif_reserved8)	(void);
+ };
+ 
++/**
++ * HifContextInvalidateFlags:
++ * @HIF_CONTEXT_INVALIDATE_FLAG_NONE:		No caches are invalid
++ * @HIF_CONTEXT_INVALIDATE_FLAG_RPMDB:		The rpmdb cache is invalid
++ * @HIF_CONTEXT_INVALIDATE_FLAG_ENROLLMENT:	Any enrollment may be invalid
++ *
++ * The update flags.
++ **/
++typedef enum {
++	HIF_CONTEXT_INVALIDATE_FLAG_NONE	= 0,
++	HIF_CONTEXT_INVALIDATE_FLAG_RPMDB	= 1,
++	HIF_CONTEXT_INVALIDATE_FLAG_ENROLLMENT	= 2,
++	/*< private >*/
++	HIF_CONTEXT_INVALIDATE_FLAG_LAST
++} HifContextInvalidateFlags;
++
+ GType		 hif_context_get_type			(void);
+ HifContext	*hif_context_new			(void);
+ 
+@@ -140,6 +156,8 @@ void             hif_context_set_http_proxy		(HifContext	*context,
+ gboolean	 hif_context_setup			(HifContext	*context,
+ 							 GCancellable	*cancellable,
+ 							 GError		**error);
++gboolean	 hif_context_setup_enrollments		(HifContext	*context,
++							 GError		**error);
+ gboolean	 hif_context_setup_sack			(HifContext	*context,
+ 							 HifState	*state,
+ 							 GError		**error);
+@@ -148,6 +166,9 @@ gboolean	 hif_context_commit			(HifContext	*context,
+ 							 GError		**error);
+ void		 hif_context_invalidate			(HifContext	*context,
+ 							 const gchar	*message);
++void		 hif_context_invalidate_full		(HifContext	*context,
++							 const gchar	*message,
++							 HifContextInvalidateFlags flags);
+ gboolean	 hif_context_install			(HifContext	*context,
+ 							 const gchar	*name,
+ 							 GError		**error);
+diff --git a/libhif/hif-repos.c b/libhif/hif-repos.c
+index 7554289..44af677 100644
+--- a/libhif/hif-repos.c
++++ b/libhif/hif-repos.c
+@@ -88,6 +88,8 @@ hif_repos_invalidate (HifRepos *repos)
+ {
+ 	HifReposPrivate *priv = GET_PRIVATE (repos);
+ 	priv->loaded = FALSE;
++	hif_context_invalidate_full (priv->context, "repos.d invalidated",
++				     HIF_CONTEXT_INVALIDATE_FLAG_ENROLLMENT);
+ }
+ 
+ /**
+@@ -424,6 +426,10 @@ hif_repos_refresh (HifRepos *repos, GError **error)
+ 	hif_repos_invalidate (repos);
+ 	g_ptr_array_set_size (priv->sources, 0);
+ 
++	/* re-populate redhat.repo */
++	if (!hif_context_setup_enrollments (priv->context, error))
++		return FALSE;
++
+ 	/* open dir */
+ 	repo_path = hif_context_get_repo_dir (priv->context);
+ 	dir = g_dir_open (repo_path, 0, error);
+diff --git a/libhif/hif-source.c b/libhif/hif-source.c
+index 026c919..3e46027 100644
+--- a/libhif/hif-source.c
++++ b/libhif/hif-source.c
+@@ -1484,6 +1484,10 @@ hif_source_update (HifSource *source,
+ 	if (!ret)
+ 		goto out;
+ 
++	/* signal that the vendor platform data is not resyned */
++	hif_context_invalidate_full (priv->context, "updated repo cache",
++				     HIF_CONTEXT_INVALIDATE_FLAG_ENROLLMENT);
++
+ 	/* done */
+ 	ret = hif_state_done (state, error);
+ 	if (!ret)
+diff --git a/libhif/hif-transaction.c b/libhif/hif-transaction.c
+index f7e9b17..24a59a4 100644
+--- a/libhif/hif-transaction.c
++++ b/libhif/hif-transaction.c
+@@ -1428,7 +1428,9 @@ hif_transaction_commit (HifTransaction *transaction,
+ 	}
+ 
+ 	/* all sacks are invalid now */
+-	hif_context_invalidate (priv->context, "transaction performed");
++	hif_context_invalidate_full (priv->context, "transaction performed",
++				     HIF_CONTEXT_INVALIDATE_FLAG_RPMDB |
++				     HIF_CONTEXT_INVALIDATE_FLAG_ENROLLMENT);
+ 
+ 	/* this section done */
+ 	ret = hif_state_done (state, error);
+commit 733c14386165edb05c4d6e456778a5403f87b908
+Author: Colin Walters <walters@verbum.org>
+Date:   Sat Jul 18 10:35:07 2015 -0400
+
+    context: Don't do entitlements for alternative install roots
+    
+    Using rpm-ostree shouldn't try to check or update my host repo's
+    entitlement status.
+    
+    Conflicts:
+    	libhif/hif-context.c
+
+diff --git a/libhif/hif-context.c b/libhif/hif-context.c
+index 454af8a..c259fa9 100644
+--- a/libhif/hif-context.c
++++ b/libhif/hif-context.c
+@@ -1224,6 +1224,15 @@ hif_context_setup_enrollments (HifContext *context, GError **error)
+ 	if (priv->enrollment_valid)
+ 		return TRUE;
+ 
++	/* Let's assume that alternative installation roots don't
++	 * require entitlement.  We only want to do system things if
++	 * we're actually affecting the system.  A more accurate test
++	 * here would be checking that we're using /etc/yum.repos.d or
++	 * so, but that can come later.
++	 */
++	if (g_strcmp0 (priv->install_root, "/") != 0)
++		return TRUE;
++
+ 	for (i = 0; cmds[i] != NULL; i++) {
+ 		_cleanup_strv_free_ gchar **argv = g_strsplit (cmds[i], " ", -1);
+ 		if (!g_file_test (argv[0], G_FILE_TEST_EXISTS))

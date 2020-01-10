@@ -1,0 +1,7 @@
+hif_context_get_type
+hif_db_get_type
+hif_lock_get_type
+hif_repos_get_type
+hif_source_get_type
+hif_state_get_type
+hif_transaction_get_type

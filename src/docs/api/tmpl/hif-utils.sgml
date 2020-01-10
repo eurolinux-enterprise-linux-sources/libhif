@@ -1,0 +1,41 @@
+<!-- ##### SECTION Title ##### -->
+hif-utils
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION hif_realpath ##### -->
+<para>
+
+</para>
+
+@path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_remove_recursive ##### -->
+<para>
+
+</para>
+
+@directory: 
+@error: 
+@Returns: 
+
+

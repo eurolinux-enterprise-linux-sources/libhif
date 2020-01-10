@@ -1,0 +1,54 @@
+<!-- ##### SECTION Title ##### -->
+hif-keyring
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION hif_keyring_add_public_key ##### -->
+<para>
+
+</para>
+
+@keyring: 
+@filename: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_keyring_add_public_keys ##### -->
+<para>
+
+</para>
+
+@keyring: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_keyring_check_untrusted_file ##### -->
+<para>
+
+</para>
+
+@keyring: 
+@filename: 
+@error: 
+@Returns: 
+
+

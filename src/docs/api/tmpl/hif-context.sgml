@@ -1,0 +1,527 @@
+<!-- ##### SECTION Title ##### -->
+HifContext
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION hif_context_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_repo_dir ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_base_arch ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_os_info ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_arch_info ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_release_ver ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_cache_dir ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_solv_dir ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_lock_dir ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_rpm_verbosity ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_install_root ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_native_arches ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_installonly_pkgs ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_check_disk_space ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_check_transaction ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_keep_cache ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_only_trusted ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_yumdb_enabled ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_cache_age ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_installonly_limit ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_http_proxy ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_sources ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_repos ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_transaction ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_sack ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_goal ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_get_state ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_set_repo_dir ##### -->
+<para>
+
+</para>
+
+@context: 
+@repo_dir: 
+
+
+<!-- ##### FUNCTION hif_context_set_release_ver ##### -->
+<para>
+
+</para>
+
+@context: 
+@release_ver: 
+
+
+<!-- ##### FUNCTION hif_context_set_cache_dir ##### -->
+<para>
+
+</para>
+
+@context: 
+@cache_dir: 
+
+
+<!-- ##### FUNCTION hif_context_set_solv_dir ##### -->
+<para>
+
+</para>
+
+@context: 
+@solv_dir: 
+
+
+<!-- ##### FUNCTION hif_context_set_vendor_cache_dir ##### -->
+<para>
+
+</para>
+
+@context: 
+@vendor_cache_dir: 
+
+
+<!-- ##### FUNCTION hif_context_set_vendor_solv_dir ##### -->
+<para>
+
+</para>
+
+@context: 
+@vendor_solv_dir: 
+
+
+<!-- ##### FUNCTION hif_context_set_lock_dir ##### -->
+<para>
+
+</para>
+
+@context: 
+@lock_dir: 
+
+
+<!-- ##### FUNCTION hif_context_set_rpm_verbosity ##### -->
+<para>
+
+</para>
+
+@context: 
+@rpm_verbosity: 
+
+
+<!-- ##### FUNCTION hif_context_set_install_root ##### -->
+<para>
+
+</para>
+
+@context: 
+@install_root: 
+
+
+<!-- ##### FUNCTION hif_context_set_check_disk_space ##### -->
+<para>
+
+</para>
+
+@context: 
+@check_disk_space: 
+
+
+<!-- ##### FUNCTION hif_context_set_check_transaction ##### -->
+<para>
+
+</para>
+
+@context: 
+@check_transaction: 
+
+
+<!-- ##### FUNCTION hif_context_set_keep_cache ##### -->
+<para>
+
+</para>
+
+@context: 
+@keep_cache: 
+
+
+<!-- ##### FUNCTION hif_context_set_only_trusted ##### -->
+<para>
+
+</para>
+
+@context: 
+@only_trusted: 
+
+
+<!-- ##### FUNCTION hif_context_set_yumdb_enabled ##### -->
+<para>
+
+</para>
+
+@context: 
+@enable_yumdb: 
+
+
+<!-- ##### FUNCTION hif_context_set_cache_age ##### -->
+<para>
+
+</para>
+
+@context: 
+@cache_age: 
+
+
+<!-- ##### FUNCTION hif_context_set_rpm_macro ##### -->
+<para>
+
+</para>
+
+@context: 
+@key: 
+@value: 
+
+
+<!-- ##### FUNCTION hif_context_set_http_proxy ##### -->
+<para>
+
+</para>
+
+@context: 
+@proxyurl: 
+
+
+<!-- ##### FUNCTION hif_context_setup ##### -->
+<para>
+
+</para>
+
+@context: 
+@cancellable: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_setup_sack ##### -->
+<para>
+
+</para>
+
+@context: 
+@state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_commit ##### -->
+<para>
+
+</para>
+
+@context: 
+@state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_invalidate ##### -->
+<para>
+
+</para>
+
+@context: 
+@message: 
+
+
+<!-- ##### FUNCTION hif_context_install ##### -->
+<para>
+
+</para>
+
+@context: 
+@name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_remove ##### -->
+<para>
+
+</para>
+
+@context: 
+@name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_update ##### -->
+<para>
+
+</para>
+
+@context: 
+@name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_repo_enable ##### -->
+<para>
+
+</para>
+
+@context: 
+@repo_id: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_repo_disable ##### -->
+<para>
+
+</para>
+
+@context: 
+@repo_id: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_context_run ##### -->
+<para>
+
+</para>
+
+@context: 
+@cancellable: 
+@error: 
+@Returns: 
+
+

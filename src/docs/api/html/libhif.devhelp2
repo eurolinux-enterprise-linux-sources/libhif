@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<book xmlns="http://www.devhelp.net/book" title="libhif Reference Manual" link="index.html" author="Richard Hughes" name="libhif" version="2" language="c">
+  <chapters>
+    <sub name="libhif library" link="libhif.html">
+      <sub name="hif-version" link="libhif-hif-version.html"/>
+    </sub>
+    <sub name="Annotation Glossary" link="annotation-glossary.html"/>
+  </chapters>
+  <functions>
+    <keyword type="macro" name="HIF_CHECK_VERSION()" link="libhif-hif-version.html#HIF-CHECK-VERSION:CAPS"/>
+    <keyword type="macro" name="HIF_MAJOR_VERSION" link="libhif-hif-version.html#HIF-MAJOR-VERSION:CAPS"/>
+    <keyword type="macro" name="HIF_MINOR_VERSION" link="libhif-hif-version.html#HIF-MINOR-VERSION:CAPS"/>
+    <keyword type="macro" name="HIF_MICRO_VERSION" link="libhif-hif-version.html#HIF-MICRO-VERSION:CAPS"/>
+  </functions>
+</book>

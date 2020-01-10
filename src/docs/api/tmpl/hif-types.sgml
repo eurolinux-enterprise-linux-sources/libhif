@@ -1,0 +1,152 @@
+<!-- ##### SECTION Title ##### -->
+hif-types
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM HifError ##### -->
+<para>
+
+</para>
+
+@HIF_ERROR_FAILED: 
+@HIF_ERROR_INTERNAL_ERROR: 
+@HIF_ERROR_CANNOT_GET_LOCK: 
+@HIF_ERROR_CANCELLED: 
+@HIF_ERROR_SOURCE_NOT_AVAILABLE: 
+@HIF_ERROR_CANNOT_FETCH_SOURCE: 
+@HIF_ERROR_CANNOT_WRITE_SOURCE_CONFIG: 
+@HIF_ERROR_PACKAGE_CONFLICTS: 
+@HIF_ERROR_NO_PACKAGES_TO_UPDATE: 
+@HIF_ERROR_PACKAGE_INSTALL_BLOCKED: 
+@HIF_ERROR_FILE_NOT_FOUND: 
+@HIF_ERROR_UNFINISHED_TRANSACTION: 
+@HIF_ERROR_GPG_SIGNATURE_INVALID: 
+@HIF_ERROR_FILE_INVALID: 
+@HIF_ERROR_SOURCE_NOT_FOUND: 
+@HIF_ERROR_FAILED_CONFIG_PARSING: 
+@HIF_ERROR_PACKAGE_NOT_FOUND: 
+
+<!-- ##### MACRO HIF_ERROR ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION hif_error_quark ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### STRUCT HifDb ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT HifContext ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL HifContext::invalidate ##### -->
+<para>
+
+</para>
+
+@hifcontext: the object which received the signal.
+@arg1: 
+
+<!-- ##### STRUCT HifTransaction ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT HifRepos ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL HifRepos::changed ##### -->
+<para>
+
+</para>
+
+@hifrepos: the object which received the signal.
+
+<!-- ##### STRUCT HifState ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL HifState::action-changed ##### -->
+<para>
+
+</para>
+
+@hifstate: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL HifState::allow-cancel-changed ##### -->
+<para>
+
+</para>
+
+@hifstate: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL HifState::package-progress-changed ##### -->
+<para>
+
+</para>
+
+@hifstate: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+
+<!-- ##### SIGNAL HifState::percentage-changed ##### -->
+<para>
+
+</para>
+
+@hifstate: the object which received the signal.
+@arg1: 
+
+<!-- ##### ARG HifState:speed ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT HifSource ##### -->
+<para>
+
+</para>
+
+

@@ -1,0 +1,56 @@
+<!-- ##### SECTION Title ##### -->
+hif-rpmts
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION hif_rpmts_add_install_filename ##### -->
+<para>
+
+</para>
+
+@ts: 
+@filename: 
+@allow_untrusted: 
+@is_update: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_rpmts_add_remove_pkg ##### -->
+<para>
+
+</para>
+
+@ts: 
+@pkg: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_rpmts_look_for_problems ##### -->
+<para>
+
+</para>
+
+@ts: 
+@error: 
+@Returns: 
+
+

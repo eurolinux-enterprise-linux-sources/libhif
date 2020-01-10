@@ -1,0 +1,153 @@
+<!-- ##### SECTION Title ##### -->
+HifTransaction
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM HifTransactionFlag ##### -->
+<para>
+
+</para>
+
+@HIF_TRANSACTION_FLAG_NONE: 
+@HIF_TRANSACTION_FLAG_ONLY_TRUSTED: 
+@HIF_TRANSACTION_FLAG_ALLOW_REINSTALL: 
+@HIF_TRANSACTION_FLAG_ALLOW_DOWNGRADE: 
+@HIF_TRANSACTION_FLAG_NODOCS: 
+
+<!-- ##### FUNCTION hif_transaction_new ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_transaction_get_flags ##### -->
+<para>
+
+</para>
+
+@transaction: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_transaction_get_remote_pkgs ##### -->
+<para>
+
+</para>
+
+@transaction: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_transaction_get_db ##### -->
+<para>
+
+</para>
+
+@transaction: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_transaction_set_sources ##### -->
+<para>
+
+</para>
+
+@transaction: 
+@sources: 
+
+
+<!-- ##### FUNCTION hif_transaction_set_uid ##### -->
+<para>
+
+</para>
+
+@transaction: 
+@uid: 
+
+
+<!-- ##### FUNCTION hif_transaction_set_flags ##### -->
+<para>
+
+</para>
+
+@transaction: 
+@flags: 
+
+
+<!-- ##### FUNCTION hif_transaction_depsolve ##### -->
+<para>
+
+</para>
+
+@transaction: 
+@goal: 
+@state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_transaction_download ##### -->
+<para>
+
+</para>
+
+@transaction: 
+@state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_transaction_commit ##### -->
+<para>
+
+</para>
+
+@transaction: 
+@goal: 
+@state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_transaction_ensure_source ##### -->
+<para>
+
+</para>
+
+@transaction: 
+@pkg: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_transaction_ensure_source_list ##### -->
+<para>
+
+</para>
+
+@transaction: 
+@pkglist: 
+@error: 
+@Returns: 
+
+

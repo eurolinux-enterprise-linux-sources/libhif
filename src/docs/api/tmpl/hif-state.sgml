@@ -1,0 +1,334 @@
+<!-- ##### SECTION Title ##### -->
+HifState
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM HifStateAction ##### -->
+<para>
+
+</para>
+
+@HIF_STATE_ACTION_UNKNOWN: 
+@HIF_STATE_ACTION_DOWNLOAD_PACKAGES: 
+@HIF_STATE_ACTION_DOWNLOAD_METADATA: 
+@HIF_STATE_ACTION_LOADING_CACHE: 
+@HIF_STATE_ACTION_TEST_COMMIT: 
+@HIF_STATE_ACTION_REQUEST: 
+@HIF_STATE_ACTION_REMOVE: 
+@HIF_STATE_ACTION_INSTALL: 
+@HIF_STATE_ACTION_UPDATE: 
+@HIF_STATE_ACTION_CLEANUP: 
+@HIF_STATE_ACTION_OBSOLETE: 
+@HIF_STATE_ACTION_REINSTALL: 
+@HIF_STATE_ACTION_DOWNGRADE: 
+@HIF_STATE_ACTION_QUERY: 
+
+<!-- ##### MACRO hif_state_done ##### -->
+<para>
+
+</para>
+
+@state: 
+@error: 
+
+
+<!-- ##### MACRO hif_state_finished ##### -->
+<para>
+
+</para>
+
+@state: 
+@error: 
+
+
+<!-- ##### MACRO hif_state_set_number_steps ##### -->
+<para>
+
+</para>
+
+@state: 
+@steps: 
+
+
+<!-- ##### MACRO hif_state_set_steps ##### -->
+<para>
+
+</para>
+
+@state: 
+@error: 
+@value: 
+@...: 
+
+
+<!-- ##### USER_FUNCTION HifStateErrorHandlerCb ##### -->
+<para>
+
+</para>
+
+@error: 
+@user_data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_get_percentage ##### -->
+<para>
+
+</para>
+
+@state: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_get_action ##### -->
+<para>
+
+</para>
+
+@state: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_get_action_hint ##### -->
+<para>
+
+</para>
+
+@state: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_get_cancellable ##### -->
+<para>
+
+</para>
+
+@state: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_get_allow_cancel ##### -->
+<para>
+
+</para>
+
+@state: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_get_speed ##### -->
+<para>
+
+</para>
+
+@state: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_set_cancellable ##### -->
+<para>
+
+</para>
+
+@state: 
+@cancellable: 
+
+
+<!-- ##### FUNCTION hif_state_set_allow_cancel ##### -->
+<para>
+
+</para>
+
+@state: 
+@allow_cancel: 
+
+
+<!-- ##### FUNCTION hif_state_set_speed ##### -->
+<para>
+
+</para>
+
+@state: 
+@speed: 
+
+
+<!-- ##### FUNCTION hif_state_set_report_progress ##### -->
+<para>
+
+</para>
+
+@state: 
+@report_progress: 
+
+
+<!-- ##### FUNCTION hif_state_set_number_steps_real ##### -->
+<para>
+
+</para>
+
+@state: 
+@steps: 
+@strloc: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_set_steps_real ##### -->
+<para>
+
+</para>
+
+@state: 
+@error: 
+@strloc: 
+@value: 
+@...: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_set_percentage ##### -->
+<para>
+
+</para>
+
+@state: 
+@percentage: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_set_package_progress ##### -->
+<para>
+
+</para>
+
+@state: 
+@package_id: 
+@action: 
+@percentage: 
+
+
+<!-- ##### FUNCTION hif_state_get_child ##### -->
+<para>
+
+</para>
+
+@state: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_action_start ##### -->
+<para>
+
+</para>
+
+@state: 
+@action: 
+@action_hint: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_action_stop ##### -->
+<para>
+
+</para>
+
+@state: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_check ##### -->
+<para>
+
+</para>
+
+@state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_done_real ##### -->
+<para>
+
+</para>
+
+@state: 
+@error: 
+@strloc: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_finished_real ##### -->
+<para>
+
+</para>
+
+@state: 
+@error: 
+@strloc: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_reset ##### -->
+<para>
+
+</para>
+
+@state: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_set_enable_profile ##### -->
+<para>
+
+</para>
+
+@state: 
+@enable_profile: 
+
+
+<!-- ##### FUNCTION hif_state_take_lock ##### -->
+<para>
+
+</para>
+
+@state: 
+@lock_type: 
+@lock_mode: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_state_release_locks ##### -->
+<para>
+
+</para>
+
+@state: 
+@Returns: 
+
+

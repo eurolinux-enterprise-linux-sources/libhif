@@ -1,0 +1,269 @@
+<!-- ##### SECTION Title ##### -->
+hif-package
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM HifPackageInfo ##### -->
+<para>
+
+</para>
+
+@HIF_PACKAGE_INFO_UNKNOWN: 
+@HIF_PACKAGE_INFO_UPDATE: 
+@HIF_PACKAGE_INFO_INSTALL: 
+@HIF_PACKAGE_INFO_REMOVE: 
+@HIF_PACKAGE_INFO_CLEANUP: 
+@HIF_PACKAGE_INFO_OBSOLETE: 
+@HIF_PACKAGE_INFO_REINSTALL: 
+@HIF_PACKAGE_INFO_DOWNGRADE: 
+
+<!-- ##### FUNCTION hif_package_get_source ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_set_source ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@src: 
+
+
+<!-- ##### FUNCTION hif_package_get_filename ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_set_filename ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@filename: 
+
+
+<!-- ##### FUNCTION hif_package_get_origin ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_set_origin ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@origin: 
+
+
+<!-- ##### FUNCTION hif_package_get_id ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_get_info ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_set_info ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@info: 
+
+
+<!-- ##### FUNCTION hif_package_get_action ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_set_action ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@action: 
+
+
+<!-- ##### FUNCTION hif_package_get_user_action ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_set_user_action ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@user_action: 
+
+
+<!-- ##### FUNCTION hif_package_is_gui ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_is_devel ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_is_downloaded ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_is_installonly ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_get_pkgid ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_set_pkgid ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@pkgid: 
+
+
+<!-- ##### FUNCTION hif_package_get_nevra ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_get_description ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_get_cost ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_download ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@directory: 
+@state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_check_filename ##### -->
+<para>
+
+</para>
+
+@pkg: 
+@valid: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_package_array_download ##### -->
+<para>
+
+</para>
+
+@packages: 
+@directory: 
+@state: 
+@error: 
+@Returns: 
+
+

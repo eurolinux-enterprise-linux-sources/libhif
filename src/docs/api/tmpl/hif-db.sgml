@@ -1,0 +1,106 @@
+<!-- ##### SECTION Title ##### -->
+HifDb
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION hif_db_new ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_db_set_enabled ##### -->
+<para>
+
+</para>
+
+@db: 
+@enabled: 
+
+
+<!-- ##### FUNCTION hif_db_get_string ##### -->
+<para>
+
+</para>
+
+@db: 
+@package: 
+@key: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_db_set_string ##### -->
+<para>
+
+</para>
+
+@db: 
+@package: 
+@key: 
+@value: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_db_remove ##### -->
+<para>
+
+</para>
+
+@db: 
+@package: 
+@key: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_db_remove_all ##### -->
+<para>
+
+</para>
+
+@db: 
+@package: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_db_ensure_origin_pkg ##### -->
+<para>
+
+</para>
+
+@db: 
+@pkg: 
+
+
+<!-- ##### FUNCTION hif_db_ensure_origin_pkglist ##### -->
+<para>
+
+</para>
+
+@db: 
+@pkglist: 
+
+

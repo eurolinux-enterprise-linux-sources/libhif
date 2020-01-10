@@ -1,0 +1,61 @@
+<!-- ##### SECTION Title ##### -->
+hif-sack
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM HifSackAddFlags ##### -->
+<para>
+
+</para>
+
+@HIF_SACK_ADD_FLAG_NONE: 
+@HIF_SACK_ADD_FLAG_FILELISTS: 
+@HIF_SACK_ADD_FLAG_UPDATEINFO: 
+@HIF_SACK_ADD_FLAG_REMOTE: 
+@HIF_SACK_ADD_FLAG_UNAVAILABLE: 
+
+<!-- ##### FUNCTION hif_sack_add_source ##### -->
+<para>
+
+</para>
+
+@sack: 
+@src: 
+@permissible_cache_age: 
+@flags: 
+@state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_sack_add_sources ##### -->
+<para>
+
+</para>
+
+@sack: 
+@sources: 
+@permissible_cache_age: 
+@flags: 
+@state: 
+@error: 
+@Returns: 
+
+

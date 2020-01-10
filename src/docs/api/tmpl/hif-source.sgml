@@ -1,0 +1,391 @@
+<!-- ##### SECTION Title ##### -->
+HifSource
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM HifSourceUpdateFlags ##### -->
+<para>
+
+</para>
+
+@HIF_SOURCE_UPDATE_FLAG_NONE: 
+@HIF_SOURCE_UPDATE_FLAG_FORCE: 
+@HIF_SOURCE_UPDATE_FLAG_IMPORT_PUBKEY: 
+@HIF_SOURCE_UPDATE_FLAG_SIMULATE: 
+
+<!-- ##### ENUM HifSourceKind ##### -->
+<para>
+
+</para>
+
+@HIF_SOURCE_KIND_REMOTE: 
+@HIF_SOURCE_KIND_MEDIA: 
+@HIF_SOURCE_KIND_LOCAL: 
+
+<!-- ##### ENUM HifSourceEnabled ##### -->
+<para>
+
+</para>
+
+@HIF_SOURCE_ENABLED_NONE: 
+@HIF_SOURCE_ENABLED_PACKAGES: 
+@HIF_SOURCE_ENABLED_METADATA: 
+
+<!-- ##### FUNCTION hif_source_new ##### -->
+<para>
+
+</para>
+
+@context: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_get_id ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_get_location ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_get_filename ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_get_packages ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_get_enabled ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_get_cost ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_get_kind ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_get_exclude_packages ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_get_gpgcheck ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_get_gpgcheck_md ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_get_description ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_get_filename_md ##### -->
+<para>
+
+</para>
+
+@source: 
+@md_kind: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_get_repo ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_is_devel ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_is_local ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_is_source ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_set_id ##### -->
+<para>
+
+</para>
+
+@source: 
+@id: 
+
+
+<!-- ##### FUNCTION hif_source_set_location ##### -->
+<para>
+
+</para>
+
+@source: 
+@location: 
+
+
+<!-- ##### FUNCTION hif_source_set_location_tmp ##### -->
+<para>
+
+</para>
+
+@source: 
+@location_tmp: 
+
+
+<!-- ##### FUNCTION hif_source_set_filename ##### -->
+<para>
+
+</para>
+
+@source: 
+@filename: 
+
+
+<!-- ##### FUNCTION hif_source_set_packages ##### -->
+<para>
+
+</para>
+
+@source: 
+@packages: 
+
+
+<!-- ##### FUNCTION hif_source_set_packages_tmp ##### -->
+<para>
+
+</para>
+
+@source: 
+@packages_tmp: 
+
+
+<!-- ##### FUNCTION hif_source_set_enabled ##### -->
+<para>
+
+</para>
+
+@source: 
+@enabled: 
+
+
+<!-- ##### FUNCTION hif_source_set_cost ##### -->
+<para>
+
+</para>
+
+@source: 
+@cost: 
+
+
+<!-- ##### FUNCTION hif_source_set_kind ##### -->
+<para>
+
+</para>
+
+@source: 
+@kind: 
+
+
+<!-- ##### FUNCTION hif_source_set_gpgcheck ##### -->
+<para>
+
+</para>
+
+@source: 
+@gpgcheck_pkgs: 
+
+
+<!-- ##### FUNCTION hif_source_set_gpgcheck_md ##### -->
+<para>
+
+</para>
+
+@source: 
+@gpgcheck_md: 
+
+
+<!-- ##### FUNCTION hif_source_set_keyfile ##### -->
+<para>
+
+</para>
+
+@source: 
+@keyfile: 
+
+
+<!-- ##### FUNCTION hif_source_setup ##### -->
+<para>
+
+</para>
+
+@source: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_check ##### -->
+<para>
+
+</para>
+
+@source: 
+@permissible_cache_age: 
+@state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_update ##### -->
+<para>
+
+</para>
+
+@source: 
+@flags: 
+@state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_clean ##### -->
+<para>
+
+</para>
+
+@source: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_set_data ##### -->
+<para>
+
+</para>
+
+@source: 
+@parameter: 
+@value: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_commit ##### -->
+<para>
+
+</para>
+
+@source: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_source_download_package ##### -->
+<para>
+
+</para>
+
+@source: 
+@pkg: 
+@directory: 
+@state: 
+@error: 
+@Returns: 
+
+

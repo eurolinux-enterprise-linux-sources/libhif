@@ -1,0 +1,108 @@
+<!-- ##### SECTION Title ##### -->
+HifLock
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM HifLockType ##### -->
+<para>
+
+</para>
+
+@HIF_LOCK_TYPE_RPMDB: 
+@HIF_LOCK_TYPE_REPO: 
+@HIF_LOCK_TYPE_METADATA: 
+@HIF_LOCK_TYPE_CONFIG: 
+
+<!-- ##### ENUM HifLockMode ##### -->
+<para>
+
+</para>
+
+@HIF_LOCK_MODE_THREAD: 
+@HIF_LOCK_MODE_PROCESS: 
+
+<!-- ##### FUNCTION hif_lock_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_lock_get_state ##### -->
+<para>
+
+</para>
+
+@lock: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_lock_set_lock_dir ##### -->
+<para>
+
+</para>
+
+@lock: 
+@lock_dir: 
+
+
+<!-- ##### FUNCTION hif_lock_take ##### -->
+<para>
+
+</para>
+
+@lock: 
+@type: 
+@mode: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_lock_release ##### -->
+<para>
+
+</para>
+
+@lock: 
+@id: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION hif_lock_release_noerror ##### -->
+<para>
+
+</para>
+
+@lock: 
+@id: 
+
+
+<!-- ##### FUNCTION hif_lock_type_to_string ##### -->
+<para>
+
+</para>
+
+@lock_type: 
+@Returns: 
+
+
